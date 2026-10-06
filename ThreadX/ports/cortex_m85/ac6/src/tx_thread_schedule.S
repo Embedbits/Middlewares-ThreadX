@@ -20,6 +20,7 @@
 /**************************************************************************/
 /**************************************************************************/
 
+#include "tx_user.h"
 
 #if (defined(TX_ENABLE_EXECUTION_CHANGE_NOTIFY) || defined(TX_EXECUTION_PROFILE_ENABLE))
     .global _tx_execution_thread_enter
@@ -30,7 +31,7 @@
 /*  FUNCTION                                               RELEASE        */
 /*                                                                        */
 /*    _tx_thread_schedule                               Cortex-M85/AC6    */
-/*                                                           6.1.11       */
+/*                                                           6.2.1        */
 /*  AUTHOR                                                                */
 /*                                                                        */
 /*    Scott Larson, Microsoft Corporation                                 */
@@ -71,6 +72,9 @@
 /*                                            resulting in version 6.1.7  */
 /*  04-25-2022      Scott Larson            Added BASEPRI support,        */
 /*                                            resulting in version 6.1.11 */
+/*  03-08-2023      Scott Larson            Added preproc FPU option,     */
+/*                                            included tx_user.h,         */
+/*                                            resulting in version 6.2.1  */
 /*                                                                        */
 /**************************************************************************/
 // VOID   _tx_thread_schedule(VOID)
@@ -386,6 +390,8 @@ _tx_svc_secure_init:
     .thumb_func
 .type _tx_vfp_access, function
 _tx_vfp_access:
+#ifdef __ARM_PCS_VFP
     VMOV.F32 s0, s0                                 // Simply access the VFP
+#endif
     BX       lr                                     // Return to caller
 .end

@@ -20,6 +20,7 @@
 @/**************************************************************************/
 @/**************************************************************************/
 @
+#include "tx_user.h"
 @
     .global _tx_timer_time_slice
     .global _tx_timer_system_clock
@@ -40,7 +41,7 @@
 @/*  FUNCTION                                               RELEASE        */
 @/*                                                                        */
 @/*    _tx_timer_interrupt                               Cortex-M0/GNU     */
-@/*                                                           6.1          */
+@/*                                                           6.2.1        */
 @/*  AUTHOR                                                                */
 @/*                                                                        */
 @/*    William E. Lamie, Microsoft Corporation                             */
@@ -76,7 +77,9 @@
 @/*                                                                        */
 @/*  05-19-2020     William E. Lamie         Initial Version 6.0           */
 @/*  09-30-2020     William E. Lamie         Modified comment(s),          */
-@/*                                            resulting in version 6.1    */        
+@/*                                            resulting in version 6.1    */
+@/*  03-08-2023      Scott Larson            Include tx_user.h,            */
+@/*                                            resulting in version 6.2.1  */
 @/*                                                                        */
 @/**************************************************************************/
 @VOID   _tx_timer_interrupt(VOID)

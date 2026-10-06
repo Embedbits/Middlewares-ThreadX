@@ -20,13 +20,14 @@
 /**************************************************************************/
 /**************************************************************************/
 
+#include "tx_user.h"
 
 /**************************************************************************/
 /*                                                                        */
 /*  FUNCTION                                               RELEASE        */
 /*                                                                        */
 /*    _tx_thread_secure_stack_initialize                Cortex-M33/AC6    */
-/*                                                           6.1.12       */
+/*                                                           6.2.1        */
 /*  AUTHOR                                                                */
 /*                                                                        */
 /*    Scott Larson, Microsoft Corporation                                 */
@@ -60,6 +61,8 @@
 /*                                            secure stack initialization */
 /*                                            macro to port-specific,     */
 /*                                            resulting in version 6.1.12 */
+/*  03-08-2023      Scott Larson            Include tx_user.h,            */
+/*                                            resulting in version 6.2.1  */
 /*                                                                        */
 /**************************************************************************/
 // VOID   _tx_thread_secure_stack_initialize(VOID)
